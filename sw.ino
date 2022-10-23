@@ -1,6 +1,6 @@
 // $Id: sw.ino,v 1.1 2022-09-27 19:30:34+09 knish Exp $
 
-#include "mylib.h"
+#include "lib.h"
 
 #define PIN_SW0 A0
 #define PIN_SW1 A1

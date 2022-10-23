@@ -5,7 +5,7 @@
 
 #define DISP_I2C_ADRS 0x70
 
-static const int disp_adrs[] = { 0x08, 0x06, 0x02, 0x00, 0x04 };
+static const int disp_adrs[] = {0x08, 0x06, 0x02, 0x00, 0x04};
 
 ////////////////////////////////////////////////////////////
 // void disp_init(void)
