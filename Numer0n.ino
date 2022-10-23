@@ -1,5 +1,7 @@
+#include "lib.h"
+
 void setup() {
-  init_led();
+  init_led(); 
   init_sw();
   init_disp();
   if (isMading) {
