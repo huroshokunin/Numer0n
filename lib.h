@@ -10,7 +10,7 @@ void disp_hit();
 void clear_check();
 void clear();
 
-void count_up()      //[追加]表示されている数字を増加される関数
+void count_up();      //[追加]表示されている数字を増加される関数
 void change_disp();  //[追加]操作するディスプレイを変更する関数
 
 ////////////////////////////////
