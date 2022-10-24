@@ -5,7 +5,7 @@ void setup() {
   init_sw();
   init_disp();
   //[変更]不要だったので条件文を削除しました
-  made_num(); 
+  make_num(); 
 }
 
 void loop() {
