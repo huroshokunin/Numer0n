@@ -1,18 +1,17 @@
 #ifndef _LIB_H_
 #define _LIB_H_
 
-//[変更]isMading変数とisChoosing変数を削除
-//クリアしたかどうか
-static boolean isClear;
-//つくられた数字列
-static int num[3];
+//[変更]libファイルに入れる必要のない変数を削除しました
 
-boolean made_num();
-boolean guess_num();   //[変更]choose_num()関数をguess_num()関数に変更
+void make_num();    //[変更]返り値をvoidにしました
+void guess_num();   //[変更]choose_num()関数をguess_num()関数にしました。返り値をvoidにしました
 void disp_blow();
 void disp_hit();
 void clear_check();
 void clear();
+
+void count_up()      //[追加]表示されている数字を増加される関数
+void change_disp();  //[追加]操作するディスプレイを変更する関数
 
 ////////////////////////////////
 // disp.h
