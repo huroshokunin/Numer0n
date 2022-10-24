@@ -4,15 +4,13 @@ void setup() {
   init_led();
   init_sw();
   init_disp();
-  if (isMading) {
-    isMading = made_num();
-  }
+  //[変更]不要だったので条件文を削除しました
+  made_num(); 
 }
 
 void loop() {
-  if (isChosing) {
-    isChosing = chose_num();
-  }
+  //[変更]不要だったので条件文を削除しました
+  guess_num();  //[変更]choose_num()関数の関数名をguess_num()に変更しました
   isClear = clear_check();
   if (isClear) {
     clear();
