@@ -8,7 +8,7 @@ static boolean isClear;
 static int num[3];
 
 boolean made_num();
-boolean guess_num();   //choose_num()関数をguess_num()関数に変更
+boolean guess_num();   //[変更]choose_num()関数をguess_num()関数に変更
 void disp_blow();
 void disp_hit();
 void clear_check();
