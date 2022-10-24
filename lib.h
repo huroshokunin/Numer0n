@@ -1,17 +1,14 @@
 #ifndef _LIB_H_
 #define _LIB_H_
 
-//数字列を作っているかどうか
-static boolean isMading;
-//数字を選んでいる途中かどうか
-static boolean isChosing;
+//[変更]isMading変数とisChoosing変数を削除
 //クリアしたかどうか
 static boolean isClear;
 //つくられた数字列
 static int num[3];
 
 boolean made_num();
-boolean chose_num();
+boolean guess_num();   //choose_num()関数をguess_num()関数に変更
 void disp_blow();
 void disp_hit();
 void clear_check();
