@@ -1,17 +1,19 @@
 #ifndef _LIB_H_
 #define _LIB_H_
 
-//[変更]libファイルに入れる必要のない変数を削除しました
+////////////////////////////////
+// all_disp_zero.h
 
-void make_num();    //[変更]返り値をvoidにしました
-void guess_num();   //[変更]choose_num()関数をguess_num()関数にしました。返り値をvoidにしました
+void make_num();
+void guess_num();
 void disp_blow();
 void disp_hit();
 void clear_check();
 void clear();
+void all_disp_zero();
 
-void count_up();      //[追加]表示されている数字を増加される関数
-void change_disp();  //[追加]操作するディスプレイを変更する関数
+void count_up();
+void change_disp();
 
 ////////////////////////////////
 // disp.h
@@ -32,3 +34,5 @@ typedef enum { SW_OFF, SW_PUSH, SW_ON, SW_RELEASE } sw_r;
 
 void sw_init(void);
 sw_r sw_read(sw_t sw);
+
+#endif
