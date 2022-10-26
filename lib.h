@@ -13,7 +13,8 @@ void clear(void);
 void count_up(void);
 void change_disp(void);
 
-//////// led.ino
+//////////////////////////
+//////// led.h
 
 typedef enum { LED0, LED1, LED2, LED3 } led_t;
 
