@@ -6,8 +6,7 @@
 
 void make_num();
 void guess_num();
-void disp_blow();
-void disp_hit();
+void disp_hitAndBlow();
 void clear_check();
 void clear();
 void all_disp_zero();
