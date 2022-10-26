@@ -1,4 +1,4 @@
-#include "mylib.h"
+#include "lib.h"
 
 void setup() {
   led_init();

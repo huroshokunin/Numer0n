@@ -3,7 +3,7 @@
 #include "lib.h"
 
 #define PIN_SW0 A0
-#define PIN_SW1 A1
+#define PIN_SW1 FA1
 #define TRUE 1
 #define FALSE 0
 
