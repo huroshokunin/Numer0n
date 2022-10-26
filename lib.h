@@ -13,6 +13,18 @@ void clear(void);
 void count_up(void);
 void change_disp(void);
 
+//////// disp.ino
+
+typedef enum { DISP0, DISP1, DISP2, DISP3, DISP4 } disp_t;
+
+void	disp_init(void);
+void	disp_clear(void);
+void	disp_cmd(int cmd);
+void	disp_data(disp_t disp, int data);
+void  disp_num(int disp,int num);
+void  all_disp_zero();
+
+
 ////////////////////////////////
 // disp.h
 
