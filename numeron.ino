@@ -140,6 +140,42 @@ void guess_num(){
     delay(10);
   }
 }
+//////////////////////////
+//クリアしたかチェックする関数
+/////////////////////////
+boolean clear_check(){
+  if((correctNum[0]==guessedNum[0]) && (correctNum[1]==guessedNum[1]) && (correctNum[2]==guessedNum[2]) ){
+    return true;
+  }
+  return false;
+}
+////////////////////////
+//hit数blow数を表示する
+///////////////////////
+void disp_hitAndBlow(){
+  int blowCounter=0;
+  int hitCounter=0;
+  for(int i=0;i<3;i++){
+    for(int j=0;j<3;j++){
+      if(correctNum[i] == guessedNum[j]){
+        if(i==j){
+          hitCounter++;
+        }
+        else{
+          blowCounter++;
+        }
+      }
+    }
+  }
+  disp_clear();
+  disp_num(1,hitCounter);
+  disp_data(0,H);
+  delay(4000);
+  disp_num(1,blowCounter);
+  disp_data(0,B);
+  delay(4000);
+  all_disp_zero();
+}
 
 ////////////////////////////////////////////////
 //ディスプレイに表示されている数値を増加させる
