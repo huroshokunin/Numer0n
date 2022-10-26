@@ -110,3 +110,12 @@ void disp_num(int disp, int num) {
       return;
   }
 }
+////////////////////////////////
+//全てのディスプレイの数字を0にする
+////////////////////////////////
+void all_disp_zero(){
+  int i;
+  for(i=0;i<3;i++){
+    disp_num(i,0);
+  }
+}
