@@ -4,15 +4,15 @@
 ////////////////////////////////
 // numeron.h
 
-void make_num();
-void guess_num();
-void disp_hitAndBlow();
-void clear_check();
-void clear();
-void all_disp_zero();
+void make_num(void);
+void guess_num(void);
+void disp_hitAndBlow(void);
+void clear_check(void);
+void clear(void);
+void all_disp_zero(void);
 
-void count_up();
-void change_disp();
+void count_up(void);
+void change_disp(void);
 
 ////////////////////////////////
 // disp.h
