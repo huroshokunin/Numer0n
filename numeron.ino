@@ -1,12 +1,15 @@
 #include "lib.h"
 
-static bool isMading =
-    false;  //現在数字列を作っているかどうか、falseならmake_num()関数終了
-static bool isGuessing =
-    false;  //現在数字列を推測中かどうか,falseならguess_num()関数終了
-static int usingDisp = 0;  //現在操作しているディスプレイ番号
-static int correctNum[3] = {0, 0, 0};  //ユーザーが正解に決めた数字列
-static int guessedNum[3] = {0, 0, 0};  //ユーザーが推測した数字列
+//現在数字列を作っているかどうか、falseならmake_num()関数終了
+static bool isMading = false;
+//現在数字列を推測中かどうか,falseならguess_num()関数終了
+static bool isGuessing = false;
+//現在操作しているディスプレイ番号
+static int usingDisp = 0;
+//ユーザーが正解に決めた数字列
+static int correctNum[3] = {0, 0, 0};
+//ユーザーが推測した数字列
+static int guessedNum[3] = {0, 0, 0};
 
 ////////////////////////////////////////////////////////////
 // void make_num(void)
