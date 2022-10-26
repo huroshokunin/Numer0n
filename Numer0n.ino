@@ -17,10 +17,9 @@ void loop() {
   guess_num();
   delay(500);
   isClear = clear_check();
-  if(isClear){
+  if (isClear) {
     all_led_on();
-    while(1){
-      
+    while (1) {
     }
   }
   disp_hitAndBlow();
