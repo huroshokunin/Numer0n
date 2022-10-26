@@ -1,11 +1,16 @@
 // $Id: disp.ino,v 1.1 2022-09-27 19:05:29+09 knish Exp $
 
 #include <Wire.h>
-#include "lib.h"
+#include "mylib.h"
 
-#define DISP_I2C_ADRS 0x70
+#define DISP_I2C_ADRS	0x70
+#define B 0x7c
+#define E 0x7b
 
-static const int disp_adrs[] = {0x08, 0x06, 0x02, 0x00, 0x04};
+static const int disp_adrs[] = { 0x08, 0x06, 0x02, 0x00, 0x04 };
+
+static const int numData[] = {0x3f,0x06,0x5B,0x4f,0x66,0x6D,0x7D,0x27,0x7f,0x6f};
+
 
 ////////////////////////////////////////////////////////////
 // void disp_init(void)
@@ -14,11 +19,11 @@ static const int disp_adrs[] = {0x08, 0x06, 0x02, 0x00, 0x04};
 // [戻り値]	なし
 
 void disp_init(void) {
-  Wire.begin(DISP_I2C_ADRS);
-  disp_cmd(0x21);  // system setup  : normal operation mode
-  disp_cmd(0xEF);  // dimming set   : 16/16 duty
-  disp_cmd(0x81);  // display setup : display on / blinking off
-  disp_clear();
+	Wire.begin(DISP_I2C_ADRS);
+	disp_cmd(0x21);		// system setup  : normal operation mode
+	disp_cmd(0xEF);		// dimming set   : 16/16 duty
+ 	disp_cmd(0x81);		// display setup : display on / blinking off
+	disp_clear();
 }
 
 ////////////////////////////////////////////////////////////
@@ -28,12 +33,12 @@ void disp_init(void) {
 // [戻り値]	なし
 
 void disp_clear(void) {
-  Wire.beginTransmission(DISP_I2C_ADRS);
-  Wire.write(0x00);
-  for (int adrs = 0x00; adrs <= 0x0F; adrs++) {
-    Wire.write(0x00);
-  }
-  Wire.endTransmission();
+	Wire.beginTransmission(DISP_I2C_ADRS);
+	Wire.write(0x00);
+	for (int adrs = 0x00; adrs <= 0x0F; adrs++) {
+		Wire.write(0x00);
+	}
+	Wire.endTransmission();
 }
 
 ////////////////////////////////////////////////////////////
@@ -43,9 +48,9 @@ void disp_clear(void) {
 // [戻り値]	なし
 
 void disp_cmd(int cmd) {
-  Wire.beginTransmission(DISP_I2C_ADRS);
-  Wire.write(cmd);
-  Wire.endTransmission();
+	Wire.beginTransmission(DISP_I2C_ADRS);
+	Wire.write(cmd);
+	Wire.endTransmission();
 }
 
 ////////////////////////////////////////////////////////////
@@ -57,13 +62,13 @@ void disp_cmd(int cmd) {
 // [戻り値]	なし
 
 void disp_data(int disp, int data) {
-  if (disp < DISP0 || disp > DISP4) {
-    return;
-  }
-  Wire.beginTransmission(DISP_I2C_ADRS);
-  Wire.write(disp_adrs[disp]);
-  Wire.write(data);
-  Wire.endTransmission();
+	if (disp < DISP0 || disp > DISP4) {
+		return;
+	}
+	Wire.beginTransmission(DISP_I2C_ADRS);
+	Wire.write(disp_adrs[disp]);
+	Wire.write(data);
+	Wire.endTransmission();
 }
 
 ////////////////////////////////////////////////////////////
@@ -73,46 +78,14 @@ void disp_data(int disp, int data) {
 //			DISP0,DISP1,DISP2,DISP3,DISP4のいずれか
 //		num	表示する1桁の数字
 // [戻り値]	なし
-
-void disp_num(int disp, int num) {
-  switch (num) {
-    case 0:
-      disp_data(disp, 0x3F);
-      break;
-    case 1:
-      disp_data(disp, 0x06);
-      break;
-    case 2:
-      disp_data(disp, 0x5B);
-      break;
-    case 3:
-      disp_data(disp, 0x4F);
-      break;
-    case 4:
-      disp_data(disp, 0x66);
-      break;
-    case 5:
-      disp_data(disp, 0x6D);
-      break;
-    case 6:
-      disp_data(disp, 0x7D);
-      break;
-    case 7:
-      disp_data(disp, 0x27);
-      break;
-    case 8:
-      disp_data(disp, 0x7F);
-      break;
-    case 9:
-      disp_data(disp, 0x6F);
-      break;
-    default:
-      return;
+void disp_num(int disp, int num){
+  if(num > 10 || num < 0 || disp < DISP0 || disp > DISP4){
+    return;
   }
+  disp_data(disp,numData[num]);
 }
-////////////////////////////////
-//全てのディスプレイの数字を0にする
-////////////////////////////////
+
+
 void all_disp_zero(){
   int i;
   for(i=0;i<3;i++){
