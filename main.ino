@@ -1,5 +1,7 @@
 #include "mylib.h"
 
+static int i = 0;
+
 void setup() {
   led_init();
   sw_init();
@@ -20,6 +22,7 @@ void loop() {
   isClear = clear_check();
   if (isClear) {
     all_led_on();
+    win_ring();
     while (1) {
     }
   }
