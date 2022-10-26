@@ -24,6 +24,7 @@ void disp_clear(void);
 void disp_cmd(int cmd);
 void disp_data(int disp, int data);
 void disp_num(int disp, int num);
+void all_led_on(void);
 
 ////////////////////////////////
 // sw.ino
