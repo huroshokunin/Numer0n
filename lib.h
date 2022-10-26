@@ -9,7 +9,6 @@ void guess_num(void);
 void disp_hitAndBlow(void);
 void clear_check(void);
 void clear(void);
-void all_disp_zero(void);
 
 void count_up(void);
 void change_disp(void);
@@ -24,8 +23,7 @@ void disp_clear(void);
 void disp_cmd(int cmd);
 void disp_data(int disp, int data);
 void disp_num(int disp, int num);
-void all_led_on(void);
-
+void all_disp_zero();
 ////////////////////////////////
 // sw.ino
 
