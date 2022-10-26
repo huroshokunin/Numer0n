@@ -2,7 +2,7 @@
 #define _LIB_H_
 
 ////////////////////////////////
-// all_disp_zero.h
+// numeron.h
 
 void make_num();
 void guess_num();
