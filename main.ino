@@ -1,5 +1,4 @@
 #include "mylib.h"
-#include "numeron.h"
 
 void setup() {
   led_init();
@@ -19,11 +18,9 @@ void loop() {
   delay(500);
   disp_hitAndBlow();
   isClear = clear_check();
-  if(isClear){
+  if (isClear) {
     all_led_on();
-    while(1){
-      
+    while (1) {
     }
   }
- 
 }
