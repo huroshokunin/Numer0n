@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  boolean isClear;
+  bool isClear;
   guess_num();
   delay(500);
   disp_hitAndBlow();

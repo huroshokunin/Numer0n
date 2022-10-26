@@ -57,16 +57,4 @@ typedef enum { SW_OFF, SW_PUSH, SW_ON, SW_RELEASE } sw_r;
 void sw_init(void);
 sw_r sw_read(sw_t sw);
 
-////////////////////////////////
-// numeron.h
-
-void make_num(void);
-void guess_num(void);
-void disp_hitAndBlow(void);
-void clear_check(void);
-void clear(void);
-
-void count_up(void);
-void change_disp(void);
-
 #endif
